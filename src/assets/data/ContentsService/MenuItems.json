@@ -1,0 +1,26 @@
+{
+    "errorCode": 0,
+    "result": [
+        {
+            "type": "item",
+            "name": "Soccer",
+            "id": 0
+        },
+        {
+            "type": "item",
+            "name": "Basketball",
+            "id": 1
+        },
+        {
+            "type": "item",
+            "name": "Football",
+            "id": 2
+        },
+        {
+            "type": "item",
+            "name": "Basketball",
+            "id": 3
+        }
+    ],
+    "error":null
+}

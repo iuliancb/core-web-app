@@ -1,0 +1,49 @@
+<!-- Generated template for the GamesComponent component -->
+<ion-card>
+  <ion-list>
+    <ion-list-header>
+      Games
+    </ion-list-header>
+
+    <ion-item-group *ngFor="let g of gamesGroup">
+      <ion-item-divider color="light">Season {{g.group}}
+        <ion-icon name="arrow-down" (click)="toggleGroup(g.group)" item-end></ion-icon>
+      </ion-item-divider>
+      <ion-item *ngFor="let p of g.values" [hidden]="isGroupShown(g.group)">
+        <ion-item-divider>
+          <ion-grid>
+            <ion-row align-items-center>
+              <ion-col align-self: baseline col>
+                <ion-row align-items-center>
+                  <ion-col>
+                    <button ion-button (click)="openTeam(p.TeamID)" outline small block>
+                      {{p.Team}}
+                    </button>
+                  </ion-col>
+                  <ion-col>
+                    {{p.Score}}
+                  </ion-col>
+                </ion-row>
+                <ion-row align-items-center>
+                  <ion-col>
+                    <button ion-button (click)="openTeam(p.OpponentID)" outline small block>
+                      {{p.Opponent}}
+                    </button>
+                  </ion-col>
+                  <ion-col>
+                    {{p.OpponentScore}}
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col col-4>
+                <ion-row>
+                  {{p.DayOfWeek}}
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item-divider>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-card>

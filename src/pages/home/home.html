@@ -1,0 +1,56 @@
+<!-- ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Canadian Fantasy Sports
+    </ion-title>
+    <button ion-button menuToggle="right" end>
+      <ion-icon name="more"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header -->
+
+
+
+<ion-header>
+    <ion-navbar>
+      <ion-title>Fantasy Sports</ion-title>
+  
+      <button ion-button menuToggle>
+          <ion-icon name="menu" *ngIf="isAuthenticated()" ></ion-icon>
+        </button>
+
+        <button ion-button menuToggle="right" *ngIf="isAuthenticated()"  end>
+            <ion-icon name="more"></ion-icon>
+          </button>
+      <ion-buttons end>
+        <button ion-button icon-left outline small block *ngIf="!isAuthenticated()" (click)="openPage('LoginPage')" >
+          <ion-icon name='log-in'></ion-icon>
+          Login
+        </button>
+       
+          <button ion-button icon-left outline small block *ngIf="!isAuthenticated()">
+            <ion-icon name='person-add'></ion-icon>
+            Sign In
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content  *ngIf="isAuthenticated()" padding >
+  Here is the content for authenticated users
+</ion-content>
+
+<ion-content  *ngIf="!isAuthenticated()" padding >
+    Here is the content for non-authenticated users
+</ion-content>
+
+<!-- ion-content  padding >
+  <teams-component>
+  </teams-component>
+  <games-component>
+  </games-component>
+</ion-content -->

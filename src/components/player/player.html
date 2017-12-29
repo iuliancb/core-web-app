@@ -1,0 +1,29 @@
+<!-- Generated template for the PlayerComponent component -->
+<ion-card>
+    <ion-item *ngFor="let player of players" >
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-avatar>
+          <img [src]="player.PhotoUrl" border="0" width="200" height="200"/>
+        </ion-avatar>
+        <ion-row>
+            First Name: {{player.FirstName}}
+          </ion-row>
+          <ion-row>
+            Last Name: {{player.LastName}}
+          </ion-row>
+          <ion-row>
+            Position: {{player.Position}}
+          </ion-row>
+          <ion-row>
+            Cathches: {{player.Catches}}
+          </ion-row>
+          <ion-row>
+              Injury Notes: {{player.InjuryNotes}}
+            </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-item>
+</ion-card>

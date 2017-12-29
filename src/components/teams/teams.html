@@ -1,0 +1,46 @@
+<!-- Generated template for the TeamsComponent component -->
+<ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-icon name="american-football" item-start></ion-icon>
+      National Footbal League
+    </ion-list-header>
+
+    <ion-item-group *ngFor="let g of teamGroups">
+      <ion-item-divider color="light">{{g.group}}
+        <ion-icon name="arrow-down" (click)="toggleGroup(g.group)" item-end></ion-icon>
+      </ion-item-divider>
+      <ion-item *ngFor="let p of g.values" [hidden]="isGroupShown(g.group)">
+        <ion-item-divider>
+          <ion-avatar item-start>
+            <img [src]="p.WikipediaLogoUrl" border="0" />
+          </ion-avatar>
+          <h2>
+            <button ion-button (click)="openItem(p)" outline small block>
+              {{p.Key}}
+            </button>
+          </h2>
+          <h2>
+            <ion-grid>
+              <ion-row>
+                <ion-col justify-content-start>
+                  {{p.Name}}
+                </ion-col>
+                <ion-col justify-content-start>
+                  {{p.City}}
+                </ion-col>
+                <ion-col justify-content-start>
+                  {{p.Division}}
+                </ion-col>
+                <ion-col justify-content-start>
+                  {{p.StadiumID}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </h2>
+        </ion-item-divider>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-card>

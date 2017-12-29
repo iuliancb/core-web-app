@@ -1,0 +1,36 @@
+<!-- Generated template for the TeamDetailComponent component -->
+<ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-avatar>
+            <img [src]="team.WikipediaLogoUrl" width="50" height="50" />
+          </ion-avatar>
+        </ion-row>
+        <ion-row>
+        
+            <img [src]="team.WikipediaWordMarkUrl" width="10" height="50" />
+
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row>
+          Key: {{team.Key}}
+        </ion-row>
+        <ion-row>
+          Name: {{team.Name}}
+        </ion-row>
+        <ion-row>
+          City: {{team.City}}
+        </ion-row>
+        <ion-row>
+          Division: {{team.Division}}
+        </ion-row>
+        <ion-row>
+          Conference: {{team.Conference}}
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

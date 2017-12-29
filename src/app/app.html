@@ -1,0 +1,59 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="outer-content">
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of leftMenuItems" (click)="openPage(p)">
+        <img src="assets/imgs/logo.png" border="0" alt="" width="30" height="30" /> {{p.name}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- ion-menu [content]="content" side="right" enabled={{!isAuthenticated()}}>
+  <ion-header>
+    <ion-toolbar>
+      <ion-avatar>Account</ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="outer-content">
+    <ion-list>
+      <button ion-item menuClose (click)="openPage('LoginPage')">
+        <ion-icon item-start name='log-in'></ion-icon>
+        Log In
+      </button>
+      <button ion-item menuClose (click)="openPage('RegisterPage')">
+        Sign In
+        <ion-icon item-start name='person-add'></ion-icon>
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu -->
+
+<ion-menu  [content]="content_right" side="right">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Account: </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="outer-content">
+    <ion-list>
+      <button menuClose="right" ion-item (click)="openPage('AccountSettingsPage')">
+        <ion-icon item-start name="settings"></ion-icon>
+        Settings
+      </button>
+      <button menuClose="right" ion-item (click)="logout()">
+        <ion-icon item-start name="log-out"></ion-icon>
+        Log Out
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" #content #content_right swipeBackEnabled="false"></ion-nav>
